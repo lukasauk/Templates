@@ -1,0 +1,41 @@
+{
+    "providerId": "hostinger.com",
+    "providerName": "Hostinger",
+    "serviceId": "hostinger-email-hosting",
+    "serviceName": "Hostinger Email Hosting",
+    "logoUrl": "https://www.domainconnect.org/wp-content/uploads/2022/09/logo-horizontal.png",
+    "description": "Setup MX, SPF and DKIM records to receive and send emails",
+    "variableDescription": "",
+    "version": 1,
+    "records": [
+        {
+            "groupId": "mx-setup",
+            "type": "MX",
+            "host": "@",
+            "priority": 5,
+            "pointsTo": "mx1.hostinger.com",
+            "ttl": 3600
+        },
+        {
+            "groupId": "mx-setup",
+            "type": "MX",
+            "host": "@",
+            "priority": 10,
+            "pointsTo": "mx2.hostinger.com",
+            "ttl": 3600
+        },
+        {
+            "groupId": "spf-setup",
+            "type": "SPFM",
+            "host": "@",
+            "spfRules": "include:_spf.mail.hostinger.com"
+        },
+        {
+            "groupId": "dkim-setup",
+            "pointsTo": "hostingermail-a.dkim.mail.hostinger.com",
+            "type": "CNAME",
+            "host": "hostingermail-a._domainkey",
+            "ttl": 3600
+        }
+    ]
+}

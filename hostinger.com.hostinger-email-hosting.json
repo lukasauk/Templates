@@ -48,14 +48,14 @@
             "groupId": "autodiscover-setup",
             "pointsTo": "autodiscover.mail.hostinger.com",
             "type": "CNAME",
-            "host": "@",
+            "host": "autodiscover",
             "ttl": 3600
         },
         {
             "groupId": "autoconfig-setup",
             "pointsTo": "autoconfig.mail.hostinger.com",
             "type": "CNAME",
-            "host": "@",
+            "host": "autoconfig",
             "ttl": 3600
         },
         {

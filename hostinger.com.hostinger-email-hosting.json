@@ -4,7 +4,7 @@
     "serviceId": "hostinger-email-hosting",
     "serviceName": "Hostinger Email Hosting",
     "logoUrl": "https://www.domainconnect.org/wp-content/uploads/2022/09/logo-horizontal.png",
-    "description": "Setup MX, SPF and DKIM records to receive and send emails",
+    "description": "Setup all necessary DNS records to enable Hostinger Email",
     "variableDescription": "",
     "version": 1,
     "records": [
@@ -35,6 +35,38 @@
             "pointsTo": "hostingermail-a.dkim.mail.hostinger.com",
             "type": "CNAME",
             "host": "hostingermail-a._domainkey",
+            "ttl": 3600
+        },
+        {
+            "groupId": "dkim-setup",
+            "pointsTo": "hostingermail-b.dkim.mail.hostinger.com",
+            "type": "CNAME",
+            "host": "hostingermail-b._domainkey",
+            "ttl": 3600
+        },
+        {
+            "groupId": "autodiscover-setup",
+            "pointsTo": "autodiscover.mail.hostinger.com",
+            "type": "CNAME",
+            "host": "@",
+            "ttl": 3600
+        },
+        {
+            "groupId": "autoconfig-setup",
+            "pointsTo": "autoconfig.mail.hostinger.com",
+            "type": "CNAME",
+            "host": "@",
+            "ttl": 3600
+        },
+        {
+            "protocol": "_tcp",
+            "name": "@",
+            "weight": 0,
+            "target": "autodiscover.mail.hostinger.com",
+            "priority": 0,
+            "service": "_autodiscover",
+            "type": "SRV",
+            "port": 443,
             "ttl": 3600
         }
     ]

@@ -59,6 +59,7 @@
             "ttl": 3600
         },
         {
+            "groupId": "autodiscover-srv-setup",
             "protocol": "_tcp",
             "name": "@",
             "weight": 0,

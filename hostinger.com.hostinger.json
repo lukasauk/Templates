@@ -1,0 +1,179 @@
+{
+  "providerId": "hostinger.com",
+  "providerName": "Hostinger",
+  "serviceId": "hostinger",
+  "serviceName": "Hostinger services",
+  "logoUrl": "https://www.domainconnect.org/wp-content/uploads/2022/09/logo-horizontal.png",
+  "description": "Setup all necessary DNS records",
+  "syncPubKeyDomain": "dns-api.hostinger.io",
+  "variableDescription": "ip is the IP address of the server.",
+  "version": 1,
+  "records": [
+    {
+      "groupId": "hostinger-email",
+      "type": "MX",
+      "host": "@",
+      "priority": 5,
+      "pointsTo": "mx1.hostinger.com",
+      "ttl": 3600
+    },
+    {
+      "groupId": "hostinger-email",
+      "type": "MX",
+      "host": "@",
+      "priority": 10,
+      "pointsTo": "mx2.hostinger.com",
+      "ttl": 3600
+    },
+    {
+      "groupId": "hostinger-email",
+      "type": "SPFM",
+      "host": "@",
+      "spfRules": "include:_spf.mail.hostinger.com"
+    },
+    {
+      "groupId": "hostinger-email",
+      "pointsTo": "hostingermail-a.dkim.mail.hostinger.com",
+      "type": "CNAME",
+      "host": "hostingermail-a._domainkey",
+      "ttl": 3600
+    },
+    {
+      "groupId": "hostinger-email",
+      "pointsTo": "hostingermail-b.dkim.mail.hostinger.com",
+      "type": "CNAME",
+      "host": "hostingermail-b._domainkey",
+      "ttl": 3600
+    },
+    {
+      "groupId": "hostinger-email",
+      "pointsTo": "autodiscover.mail.hostinger.com",
+      "type": "CNAME",
+      "host": "autodiscover",
+      "ttl": 3600
+    },
+    {
+      "groupId": "hostinger-email",
+      "pointsTo": "autoconfig.mail.hostinger.com",
+      "type": "CNAME",
+      "host": "autoconfig",
+      "ttl": 3600
+    },
+    {
+      "groupId": "hostinger-email",
+      "protocol": "_tcp",
+      "name": "@",
+      "weight": 0,
+      "target": "autodiscover.mail.hostinger.com",
+      "priority": 0,
+      "service": "_autodiscover",
+      "type": "SRV",
+      "port": 443,
+      "ttl": 3600
+    },
+    {
+      "groupId": "web-hosting",
+      "pointsTo": "%ip%",
+      "type": "A",
+      "host": "@",
+      "ttl": 3600
+    },
+    {
+      "groupId": "web-hosting",
+      "pointsTo": "%ip%",
+      "type": "A",
+      "host": "ftp",
+      "ttl": 3600
+    },
+    {
+      "groupId": "web-hosting",
+      "pointsTo": "@",
+      "type": "CNAME",
+      "host": "www",
+      "ttl": 3600
+    },
+    {
+      "groupId": "website-builder",
+      "pointsTo": "connect.hostinger.com",
+      "type": "ALIAS",
+      "host": "@",
+      "ttl": 3600
+    },
+    {
+      "groupId": "website-builder",
+      "pointsTo": "connect.hostinger.com",
+      "type": "CNAME",
+      "host": "www",
+      "ttl": 3600
+    },
+    {
+      "groupId":"titan-email",
+      "type":"MX",
+      "host":"@",
+      "priority":10,
+      "pointsTo":"mx1.titan.email",
+      "ttl":3600
+    },
+    {
+      "groupId":"titan-email",
+      "type":"MX",
+      "host":"@",
+      "priority":20,
+      "pointsTo":"mx2.titan.email",
+      "ttl":3600
+    },
+    {
+      "groupId":"titan-email",
+      "type":"SPFM",
+      "host":"@",
+      "spfRules":"include:spf.titan.email"
+    },
+    {
+      "groupId":"google-workspace",
+      "type":"MX",
+      "host":"@",
+      "priority":1,
+      "pointsTo":"ASPMX.L.GOOGLE.COM",
+      "ttl":3600
+    },
+    {
+      "groupId":"google-workspace",
+      "type":"MX",
+      "host":"@",
+      "priority":5,
+      "pointsTo":"ALT1.ASPMX.L.GOOGLE.COM",
+      "ttl":3600
+    },
+    {
+      "groupId":"google-workspace",
+      "type":"MX",
+      "host":"@",
+      "priority":5,
+      "pointsTo":"ALT2.ASPMX.L.GOOGLE.COM",
+      "ttl":3600
+    },
+    {
+      "groupId":"google-workspace",
+      "type":"MX",
+      "host":"@",
+      "priority":10,
+      "pointsTo":"ALT3.ASPMX.L.GOOGLE.COM",
+      "ttl":3600
+    },
+    {
+      "groupId":"google-workspace",
+      "type":"MX",
+      "host":"@",
+      "priority":10,
+      "pointsTo":"ALT4.ASPMX.L.GOOGLE.COM",
+      "ttl":3600
+    },
+    {
+      "groupId":"google-workspace",
+      "type":"SPFM",
+      "host":"@",
+      "spfRules":"include:_spf.google.com",
+      "ttl":3600
+    }
+  ]
+}
